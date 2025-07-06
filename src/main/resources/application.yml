@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: springconcepts
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/databaseschema
+    username: postgres
+    password: admin
+  rabbitmq:
+    host: localhost
+    virtualhost: /
+    port: 5672
+    username: admin
+    password: 123
