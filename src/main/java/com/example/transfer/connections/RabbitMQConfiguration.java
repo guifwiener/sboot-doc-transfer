@@ -1,4 +1,4 @@
-package com.example.springconcepts.connections;
+package com.example.transfer.connections;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;

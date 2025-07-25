@@ -1,6 +1,5 @@
-package com.example.springconcepts.bankOrder;
+package com.example.transfer.bankOrder;
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

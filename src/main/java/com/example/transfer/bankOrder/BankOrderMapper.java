@@ -1,4 +1,4 @@
-package com.example.springconcepts.bankOrder;
+package com.example.transfer.bankOrder;
 
 public class BankOrderMapper {
 

@@ -1,6 +1,6 @@
-package com.example.springconcepts.bankOrder;
+package com.example.transfer.bankOrder;
 
-import com.example.springconcepts.connections.RabbitMQConfiguration;
+import com.example.transfer.connections.RabbitMQConfiguration;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class BankOrderService {
 
-    private BankOrderModel bankOrderModel;
     private final RabbitMQConfiguration rabbitMQConfiguration;
 
     private final BankOrderRepository bankOrderRepository;
@@ -20,9 +19,10 @@ public class BankOrderService {
 
     public BankOrderModel registerTransaction(BankOrderDto bankOrderDto) throws Exception {
 
-//        BankOrderModel bankOrder = bankOrderRepository.save(bankOrderModel);
+        BankOrderModel bankOrderModel = BankOrderMapper.convertDtoToModel(bankOrderDto);
+        BankOrderModel bankOrder = bankOrderRepository.save(bankOrderModel);
         rabbitMQConfiguration.publish("Transação enviada");
-        return null;
+        return bankOrder;
 
     }
 
